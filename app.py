@@ -38,7 +38,7 @@ vehicles[['make', 'model']] = vehicles['model'].str.split(' ', n=1, expand=True)
 # Create a DataFrame where model year is known (not filled with 0 from earlier)
 vehicles_known_year = vehicles[vehicles['model_year'] != 0]
 
-if st.checkbox('Median Price of Vehicles by Type and Model Year'):
+if st.checkbox('Median Price of Vehicles by Type and Model Year', True):
     st.markdown('##### A scatterplot showing the median price of vehicles by type and model year')
     # First, we need to calculate the median price for each type and year
     avg_price_type_year = vehicles_known_year.groupby(['type', 'model_year'])['price'].median().reset_index()
@@ -50,7 +50,7 @@ if st.checkbox('Median Price of Vehicles by Type and Model Year'):
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
-if st.checkbox('Median Price by Vehicle Make and Model Year'):
+if st.checkbox('Median Price by Vehicle Make and Model Year', True):
     st.markdown('##### A scatterplot showing the median price of vehicles by make and model year')
     # Now calculate the median price for each make and year
     avg_price_make_year = vehicles_known_year.groupby(['make', 'model_year'])['price'].median().reset_index()
@@ -62,7 +62,7 @@ if st.checkbox('Median Price by Vehicle Make and Model Year'):
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
-if st.checkbox('Days Vehicle is Listed by Vehicle Make'):
+if st.checkbox('Days Vehicle is Listed by Vehicle Make', True):
     st.markdown('##### A histogram of days a vehicle is listed based on the car\'s make')
 
     # Create the histogram
@@ -72,7 +72,7 @@ if st.checkbox('Days Vehicle is Listed by Vehicle Make'):
     # Plot!
     st.plotly_chart(fig, use_container_width=True)
 
-if st.checkbox('Vehicle Condition by Model'):
+if st.checkbox('Vehicle Condition by Model', True):
     st.markdown('##### A histogram of vehicle conditions based on the vehicle\'s model')
     fig = px.histogram(vehicles, x="condition", color="model", barmode='group')
     fig.update_layout(title_text='Vehicle Condition by Model', xaxis_title='Condition', yaxis_title='Count')
