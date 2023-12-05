@@ -90,7 +90,7 @@ fig.update_layout(title_text='Days Vehicle is Listed by Vehicle Make', xaxis_tit
 st.plotly_chart(fig, use_container_width=True)
 st.markdown('From this plot, it appears that the number of vehicles listed decreases as the number of days the vehicle is listed increases. This suggests that most vehicles are sold or removed from the listing within a short period of time. Most listings being there between 10 and 35 days.')
 
-make = st.checkbox('Show by Make')
+make = st.checkbox('Display Data by Vehicle Make')
 if make:
     show = 'make'
     st.markdown('##### A histogram of vehicle conditions based on the vehicle\'s make')
