@@ -5,7 +5,7 @@ import numpy as np
 
 st.header('Car Sales Advertisements')
 
-vehicles = pd.read_csv('./datasets/vehicles_us.csv')
+vehicles = pd.read_csv('https://practicum-content.s3.us-west-1.amazonaws.com/datasets/vehicles_us.csv')
 # Showing quick information about the data
 vehicles.info()
 
