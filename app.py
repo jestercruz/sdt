@@ -96,7 +96,7 @@ if make:
 else:
     show = 'model'
 
-st.markdown(f'##### A histogram of vehicle conditions based on the vehicle\'s {show.capitalize()}')
+st.markdown(f'##### A histogram of vehicle conditions based on the vehicle\'s {show}')
 fig = px.histogram(vehicles, x="condition", color=show, barmode='group')
 fig.update_layout(title_text=f'Vehicle Condition by {show.capitalize()}', xaxis_title='Condition', yaxis_title='Number of Vehicles')
 
