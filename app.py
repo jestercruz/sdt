@@ -93,14 +93,12 @@ st.markdown('From this plot, it appears that the number of vehicles listed decre
 make = st.checkbox('Display Data by Vehicle Make')
 if make:
     show = 'make'
-    st.markdown('##### A histogram of vehicle conditions based on the vehicle\'s make')
-    fig = px.histogram(vehicles, x="condition", color=show, barmode='group')
-    fig.update_layout(title_text='Vehicle Condition by Make', xaxis_title='Condition', yaxis_title='Number of Vehicles')
 else:
     show = 'model'
-    st.markdown('##### A histogram of vehicle conditions based on the vehicle\'s model')
-    fig = px.histogram(vehicles, x="condition", color=show, barmode='group')
-    fig.update_layout(title_text='Vehicle Condition by Model', xaxis_title='Condition', yaxis_title='Number of Vehicles')
+
+st.markdown(f'##### A histogram of vehicle conditions based on the vehicle\'s {show.capitalize()}')
+fig = px.histogram(vehicles, x="condition", color=show, barmode='group')
+fig.update_layout(title_text=f'Vehicle Condition by {show.capitalize()}', xaxis_title='Condition', yaxis_title='Number of Vehicles')
 
 # Plot!
 st.plotly_chart(fig, use_container_width=True)
